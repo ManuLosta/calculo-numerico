@@ -1,15 +1,13 @@
 def bisection(f, a, b, error):
     mid = (a + b) / 2
     i = 0
-    while abs(a - b) > error:
+    while abs(b - a) > error:
         if i > 100000:
             return Exception("No solution found")
 
-        if f(mid) == 0:
-            return mid
-
         fa, fb = f(a), f(b)
         mid = (a + b) / 2
+        print(f"n: {i} | a: {a} | b: {b} | p{i}: {mid} | f(a): {fa} | f(b): {fb} | f(p{i}): {f(mid)}")
 
         if f(mid) * fa < 0:
             b = mid
