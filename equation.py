@@ -24,7 +24,7 @@ def newton_raphson(f, fd, x0, error):
     i = 0
     while i <= 1000000:
         xn = x - f(x) / fd(x)
-        if abs(x - xn) < error:
+        if abs(f(xn)) < error:
             return xn
 
         x = xn
